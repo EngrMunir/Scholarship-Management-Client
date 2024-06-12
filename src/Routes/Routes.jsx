@@ -47,12 +47,12 @@ export const router = createBrowserRouter([
         {
           path:'/details/:id',
           element:<Details></Details>,
-          loader:({params})=>fetch(`https://scholarship-management-server.vercel.app/scholarship/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/scholarship/${params.id}`)
         },
         {
           path:'/update/:id',
           element:<UpdateApplication></UpdateApplication>,
-          loader:({params})=>fetch(`https://scholarship-management-server.vercel.app/applied-scholarship/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/applied-scholarship/${params.id}`)
         },
         {
           path:'/payment/:id',
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
         {
           path:'/appliedDetails/:id',
           element:<AppliedDetails></AppliedDetails>,
-          loader:({params})=>fetch(`https://scholarship-management-server.vercel.app/applied-scholarship/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/applied-scholarship/${params.id}`)
         }
       ]
     },
