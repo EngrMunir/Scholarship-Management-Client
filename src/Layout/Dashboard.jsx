@@ -28,8 +28,8 @@ const Dashboard = () => {
 
     console.log(loggedUser.role)
 
-    // const role = loggedUser.role;
-    const role = "admin";
+    const role = loggedUser.role;
+    // const role = "admin";
     return (
         <div className="flex">
             {/* sidebar */}
