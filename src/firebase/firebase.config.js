@@ -5,14 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCXYpWd8CGm91K4hGdX3baXRO6nE1vYf50",
-  authDomain: "scholarships-34021.firebaseapp.com",
-  projectId: "scholarships-34021",
-  storageBucket: "scholarships-34021.appspot.com",
-  messagingSenderId: "939097641309",
-  appId: "1:939097641309:web:47857d54533100aed518b4"
+  apiKey: "AIzaSyChS5pHga9zNaqSqJ1x-KciSH2JYrjEUyE",
+  authDomain: "scholarship-management-50872.firebaseapp.com",
+  projectId: "scholarship-management-50872",
+  storageBucket: "scholarship-management-50872.appspot.com",
+  messagingSenderId: "623086268425",
+  appId: "1:623086268425:web:478de0436bc53d8a8588d8"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app;
