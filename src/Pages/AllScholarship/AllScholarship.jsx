@@ -15,6 +15,7 @@ const AllScholarship = () => {
     console.log('count',count)
     // const count = filteredScholarships.length;
     const numberOfPages = Math.ceil(count/ itemsPerPage);
+    // console.log(import.meta.env.VITE_apiKey)
 
     const pages = [...Array(numberOfPages).keys()];
 
