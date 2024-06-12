@@ -8,16 +8,18 @@ import AllScholarship from "../Pages/AllScholarship/AllScholarship";
 import Details from "../Pages/Details/Details";
 import Payment from "../Pages/Payment/Payment";
 import Dashboard from "../Layout/Dashboard";
-import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
 import UserApplication from "../Pages/Dashboard/UserApplication/UserApplication";
 import UserReviews from "../Pages/Dashboard/UserReviews/UserReviews";
 import AddScholarship from "../Pages/Dashboard/AddScholarShip/AddScholarship";
-import AdminProfile from "../Pages/Dashboard/AdminProfile/AdminProfile";
 import ManageScholarship from "../Pages/Dashboard/ManageScholarship/ManageScholarship";
-import ManageAppliedScholarship from "../Pages/Dashboard/ManageAppliedScholarship/ManageAppliedScholarship";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 import ManageReview from "../Pages/Dashboard/ManageReview/ManageReview";
 import AllAppliedScholarship from "../Pages/Dashboard/AllAppliedScholarship/AllAppliedScholarship";
+import UpdateApplication from "../Pages/Dashboard/UpdateApplication/UpdateApplication";
+import AllReview from "../Pages/Dashboard/AllReview/AllReview";
+import AppliedDetails from "../Pages/Dashboard/AppliedDetails/AppliedDetails";
+import Profile from "../Pages/Dashboard/Profile/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -45,23 +47,29 @@ export const router = createBrowserRouter([
         {
           path:'/details/:id',
           element:<Details></Details>,
-          loader:({params})=>fetch(http://localhost:5000/scholarship/${params.id})
+          loader:({params})=>fetch(`https://scholarship-management-server.vercel.app/scholarship/${params.id}`)
+        },
+        {
+          path:'/update/:id',
+          element:<UpdateApplication></UpdateApplication>,
+          loader:({params})=>fetch(`https://scholarship-management-server.vercel.app/applied-scholarship/${params.id}`)
         },
         {
           path:'/payment/:id',
           element:<Payment></Payment>
+        },
+        {
+          path:'/appliedDetails/:id',
+          element:<AppliedDetails></AppliedDetails>,
+          loader:({params})=>fetch(`https://scholarship-management-server.vercel.app/applied-scholarship/${params.id}`)
         }
       ]
     },
     {
       path:'/dashboard',
-      element:<Dashboard></Dashboard>,
+      element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         // normal user routes
-        {
-          path:'userProfile',
-          element:<UserProfile></UserProfile>          
-        },
         {
           path:'userApplication',
           element:<UserApplication></UserApplication>
@@ -72,8 +80,8 @@ export const router = createBrowserRouter([
         },
         // admin routes
         {
-          path:'adminProfile',
-          element:<AdminProfile></AdminProfile>
+          path:'profile',
+          element:<Profile></Profile>
         },
         {
           path:'addScholarship',
@@ -82,10 +90,6 @@ export const router = createBrowserRouter([
         {
           path:'manageScholarship',
           element:<ManageScholarship></ManageScholarship>
-        },
-        {
-          path:'manageAppliedScholarship',
-          element:<ManageAppliedScholarship></ManageAppliedScholarship>
         },
         {
           path:'manageUser',
@@ -98,7 +102,12 @@ export const router = createBrowserRouter([
         {
           path:'allAppliedScholarship',
           element:<AllAppliedScholarship></AllAppliedScholarship>
-        }
+        },
+        {
+          path:'allReview',
+          element:<AllReview></AllReview>
+        },
+       
   
         // moderator routes
 

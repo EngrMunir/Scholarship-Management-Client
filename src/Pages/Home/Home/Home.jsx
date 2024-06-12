@@ -1,12 +1,13 @@
 import AllScholarship from "../../AllScholarship/AllScholarship";
+import TopScholarship from "../../TopScholarship/TopScholarship";
 import Slider from "../Slider/Slider";
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="mb-10">
             <Slider></Slider>
-            <AllScholarship></AllScholarship>
+            <TopScholarship></TopScholarship>
         </div>
     );
 };

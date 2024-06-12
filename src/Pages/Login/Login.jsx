@@ -1,7 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -16,6 +16,9 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { signIn }= useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const onSubmit = data =>{
      const email = data.email;
@@ -25,7 +28,7 @@ const Login = () => {
      .then( result =>{
         const user = result.user;
         console.log(user);
-        navigate('/')
+        navigate(from, { replace: true});
         Swal.fire({
             title: "User LoggedIn Successfully",
             showClass: {

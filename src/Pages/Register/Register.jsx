@@ -73,7 +73,7 @@ const Register = () => {
                         errors.email && <span className="text-red-500">Email is required</span>
                     }
                     <br />
-                    <input type="password" placeholder="Password" {...register('password',{required:true, minLength:6, pattern:/(?=.[A-Z])(?=.[a-z])/})} className="border w-full py-2 px-4 mb-4" />
+                    <input type="password" placeholder="Password" {...register('password',{required:true, minLength:6, pattern:/(?=.*[A-Z])(?=.*[a-z])/})} className="border w-full py-2 px-4 mb-4" />
                         {
                             errors.password?.type === 'required' && <p className="text-red-500">Password must be required</p>
                         }

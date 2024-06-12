@@ -7,7 +7,7 @@ const Details = () => {
         application_fees,service_charge,application_deadline,scholarship_post_date,posted_user_email } = scholarship;
 
     return (
-        <div className="md:w-1/2 mx-auto">
+        <div className="md:w-1/2 mx-auto mb-10">
             <img className="w-full" src={university_image} alt="Shoes" />
             <div>
                 <h2>{scholarship_name}</h2>
@@ -29,7 +29,7 @@ const Details = () => {
                     </div>
                 </div>
                
-                <div>
+                <div className="text-center mt-4">
                     <Link to={`/payment/${_id}`} state={{scholarship}}><button className="btn btn-secondary btn-sm px-5">Apply Scholarship</button></Link>
                 </div>
             </div>

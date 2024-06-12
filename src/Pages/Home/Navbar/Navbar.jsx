@@ -7,14 +7,12 @@ const Navbar = () => {
 
     const handleLogout = ()=>{
         logOut()
-        .then(()=>{})
-        .catch()
     }
     const navlinks =
     <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/scholarships">All ScholarShip</NavLink></li>
-        <li><NavLink to="/dashboard/addScholarship">Admin Dashboard</NavLink></li>
+        <li><NavLink to="/dashboard/profile">Dashboard</NavLink></li>
        
        {
         user? <>
