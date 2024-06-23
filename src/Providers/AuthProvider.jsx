@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import app from "../firebase/firebase.config";
-// import axios from "axios";
+import useAxiosPublic from "../hook/useAxiosPublic";
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app)
@@ -11,6 +11,7 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const axiosPublic = useAxiosPublic();
 
     const createUser =(email, password)=>{
         return createUserWithEmailAndPassword(auth, email, password)
@@ -26,6 +27,7 @@ const AuthProvider = ({children}) => {
     }
 
     const githubSignIn = ()=>{
+        setLoading(true);
         return signInWithPopup(auth,githubProvider)
     }
 
@@ -43,32 +45,31 @@ const AuthProvider = ({children}) => {
     }
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, currentUser=>{
-            // const userEmail = currentUser?.email || user?.email;
-            // const loggedUser = { email: userEmail };
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = { email: userEmail };
             setUser(currentUser);
             console.log('current user', currentUser);
             setLoading(false);
             // if user exist then issue a token
-            // if(currentUser){
+            if(currentUser){
+                // TODO: get token and store client
                 
-            //     axios.post('https://scholarship-management-server.vercel.app/jwt', loggedUser, {withCredentials: true })
-            //     .then(res => {
-            //         console.log('token response',res.data);
-            //     })
-            // }
-            // else{
-            //     axios.post('https://scholarship-management-server.vercel.app/logout',loggedUser, {
-            //         withCredentials:true
-            //     })
-            //     .then(res =>{
-            //         console.log(res.data);
-            //     })
-            // }
-        })
+                axiosPublic.post('/jwt', loggedUser)
+                .then(res => {
+                    console.log('token response',res.data);
+                    if(res.data.token){
+                        localStorage.setItem('access-token', res.data.token)
+                    }
+                })
+            }
+            else{
+            // TODO: remove token (if token stored in the client side local storage, caching, in memory)
+                console.log('remove token')
+            }
         return ()=>{
             return unSubscribe();
         }
-    },[])
+    })},[])
 
 
     const authInfo ={ createUser, signIn, user, logOut, updateUserProfile, loading,googleSignIn, githubSignIn }
