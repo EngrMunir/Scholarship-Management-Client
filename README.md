@@ -1,4 +1,4 @@
-# Scholarship management
+# Scholar master
 ## Overview:
 The Project stands for University Scholarship management system. Student will get scholarship information of several university of the world. It provides complete apply application includes payment of tuition fees. 
 
