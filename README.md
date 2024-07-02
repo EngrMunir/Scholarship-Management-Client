@@ -7,7 +7,6 @@ The Project stands for University Scholarship management system. Student will ge
 •	Payment System Integrated and student can payment their tuition fees
 •	API is much secure though JWT and axios interceptor, unauthorize server request is forbidden.
 
-https://scholarship-management-50872.web.app
 ## Technology:
 React,Mongodb,DaisyUI,Firebase, Tailwind CSS, NodeJS, ExpressJS
 ## Getting Started to clone project
