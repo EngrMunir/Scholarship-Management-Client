@@ -12,6 +12,4 @@ Technology:React,Mongodb,DaisyUI,Firebase, Tailwind CSS, NodeJS, ExpressJS
 
 ## Dependencies:
 install
-    "@types/react","@types/react-dom","@vitejs/plugin-react","autoprefixer","daisyui",
-    "eslint","eslint-plugin-react","eslint-plugin-react-hooks","eslint-plugin-react-refresh","postcss","tailwindcss","vite"
-    "@stripe/react-stripe-js","@tanstack/react-query","axios","date-fns","dateformat","firebase","react-hook-form","react-icons","react-router-dom","sort-by","sweetalert2","swiper"
+    "React","daisyui","postcss","tailwindcss","vite""@stripe/react-stripe-js","@tanstack/react-query","axios","date-fns","dateformat","firebase","react-hook-form","react-icons","react-router-dom","sort-by","sweetalert2","swiper"
