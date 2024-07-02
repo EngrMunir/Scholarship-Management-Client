@@ -1,6 +1,7 @@
 # Scholarship management
 
-Overview:The Project stands for University Scholarship management system. Student will get scholarship information of several university of the world. It provides complete apply application includes payment of tuition fees. 
+## Overview:
+The Project stands for University Scholarship management system. Student will get scholarship information of several university of the world. It provides complete apply application includes payment of tuition fees. 
 
 ## Key Features:
 •	Dashboard for admin, moderator and user with user friendly UI
