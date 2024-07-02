@@ -15,7 +15,7 @@ React,Mongodb,DaisyUI,Firebase, Tailwind CSS, NodeJS, ExpressJS
 ### 1. Clone the Repository
 Clone the project repository to your local machine using the following command:
 ```sh
-git clone https://github.com/EngrMunir/Library-Management-Clent.git
+git clone https://github.com/EngrMunir/Scholarship-Management-Client.git
 ### 2. Move to the project repository
 cd Scholarship-Management-Client
 ### 3. Install the required project dependencies using npm:
