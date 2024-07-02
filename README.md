@@ -1,5 +1,4 @@
 # Scholarship management
-
 ## Overview:
 The Project stands for University Scholarship management system. Student will get scholarship information of several university of the world. It provides complete apply application includes payment of tuition fees. 
 
@@ -11,3 +10,15 @@ The Project stands for University Scholarship management system. Student will ge
 https://scholarship-management-50872.web.app
 ## Technology:
 React,Mongodb,DaisyUI,Firebase, Tailwind CSS, NodeJS, ExpressJS
+## Getting Started to clone project
+
+### 1. Clone the Repository
+Clone the project repository to your local machine using the following command:
+```sh
+git clone https://github.com/EngrMunir/Library-Management-Clent.git
+### 2. Move to the project repository
+cd Scholarship-Management-Client
+### 3. Install the required project dependencies using npm:
+npm install
+### 4. Start the development server:
+npm run dev
