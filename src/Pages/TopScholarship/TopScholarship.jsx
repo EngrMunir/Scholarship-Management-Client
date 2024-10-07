@@ -19,7 +19,7 @@ const TopScholarship = () => {
         <h2 className="text-3xl text-center mb-5">Top Scholarships </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {
-                scholarships.map(scholarship => <TopCard key={scholarship._id} topScholarship={scholarship}></TopCard> )
+                scholarships.slice(0,6).map(scholarship => <TopCard key={scholarship._id} topScholarship={scholarship}></TopCard> )
             }
         </div>
         <div className="text-center mt-5">
